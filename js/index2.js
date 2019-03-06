@@ -1,28 +1,31 @@
 var characterParent = document.getElementById("characters-display");
+var legendaryParent = document.getElementById("legendary-display");
+var epicParent = document.getElementById("epic-display");
+var normalParent = document.getElementById("normal-display");
+var players;
 
-function generateCards (array,parent) {
-  var card = "";
-  array.forEach(function(obj) {
-    card += '<div class="card-outer-border">'
-    card += ' <div class ="card-inner-border ' + obj.card +'-inner-border-color">';
-    card += '   <div class="card-title ' + obj.card + '-title-color">' + obj.name + '</div>';
-    card += '   <div class="card-img" style = "background: center/cover url(images/main_characters/' + obj.img +') no-repeat"></div>';
-    card += '   <div class="card-type ' + obj.card + '-title-color">' + obj.type + '</div>';
-    card += '   <div class="card-explanation ' + obj.card +'-explanation-color">' + obj.explanation + '</div>';
-    card += ' </div>';
-    card += '</div>';
+function getPlayer (player) {
+  var whichPlayer = document.getElementById(player);
+  var whichCharacter = whichPlayer.querySelector(".card-title").innerText;
+  var player = characters.filter(function(obj) {
+    return obj.name === whichCharacter;
   })
-  parent.innerHTML = card;
+  return player[0];
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  generateCards(characters, characterParent,true);
+  generateCards(legendaryHabilities, legendaryParent,false);
+  generateCards(epicHabilities, epicParent,false);
+  generateCards(normalHabilities, normalParent,false);
 
+  var btnBeginGame = document.querySelector(".arena");
 
+  btnBeginGame.onclick = function() {
+   players = [getPlayer("player1"),getPlayer("player2")];
 
+   fuckingnumber='hola'
 
-window.onload = function() {
-  generateCards (characters,characterParent);
-  
-
-
-
-}
+    window.location.href = `index3.html?myvar=${fuckingnumber}`;
+  }
+});

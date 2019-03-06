@@ -1,0 +1,233 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", "HelveticaNeueWF", Arial, Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+}
+
+body {
+  /* width: 1250px; */
+  font-size:16px;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* Cards display container classes */
+
+.container {
+  padding: 10px 0px;
+}
+
+.black-background {
+  background-color: black;
+}
+
+.grey-background {
+  background-color: grey;
+}
+
+.darkgrey-background {
+  background-color: darkgrey;
+}
+
+.beige-background {
+  background-color: bisque;
+}
+ .khaki-background {
+  background-color: darkkhaki;  
+ }
+
+
+.normal-display {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-frame {
+  margin:14px;
+  padding:5px;
+  width: 178px;
+  height: 248px; 
+  border-radius: 15px;
+}
+
+
+.card-frame .card-outer-border { margin: 0; }
+
+.btn-position {
+  margin-left: 45%;
+}
+
+.btn {
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+/* Common Cards Properties */
+
+.card-outer-border {
+  margin: 17.5px;
+  padding: 7px;
+  display: inline-block;
+  background-color: black;
+  border-radius: 15px;
+  border: 2.1px solid white;
+}
+
+.card-inner-border {
+  padding: 3.5px;
+  width: 150.5px;
+  height: 220.5px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;  
+  align-items: center;
+  border-radius: 10px;
+}
+
+.card-title {
+  padding-top: 1%;
+  padding-left: 10.5px;
+  width:110%;
+  height: 17.5px;
+  align-self: center;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.56rem;
+}
+
+.card-img {
+  width:100%;
+  height: 122.5px;
+  align-self: center;
+  border: 1px solid black;
+}
+
+.card-type {
+  padding-top: 1%;
+  padding-left: 10.5px;
+  width:110%;
+  height: 17.5px;
+  align-self: center;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.56rem;
+}
+
+.card-explanation {
+  padding: 2.1px 7px;
+  width:100%;
+  height: 56px;
+  font-size: 0.49rem;
+  font-style: italic;
+}
+
+.card-section {
+  padding: 25px 100px;
+}
+
+.card-display {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+/* Player Selection Classes */
+
+
+/* Characters Cards Properties */
+
+.character-inner-border-color {
+  background-image: linear-gradient(rgba(155, 250, 100, 0.5),rgba(155, 250, 100, 0.5)), url("../../images/Textures/seamless-1747007_1280.jpg");
+}
+
+.character-title-color {
+  background-image: linear-gradient(rgba(206, 250, 170, 0.8),rgba(206, 250, 170, 0.8)), url("../../images/Textures/seamless-1747007_1280.jpg");
+  border: 2px solid rgb(51, 63, 41);
+}
+
+.character-type-color {
+  background-image: linear-gradient(rgba(206, 250, 170, 0.8),rgba(206, 250, 170, 0.8)), url("../../images/Textures/seamless-1747007_1280.jpg");
+  border: 2px solid rgb(51, 63, 41);
+}
+
+.character-explanation-color {
+  background-image: linear-gradient(rgba(217, 243, 197, 0.8),rgba(217, 243, 197, 0.8)), url("../../images/Textures/seamless-1747007_1280.jpg");
+  border-right: 2px solid rgb(51, 63, 41);
+  border-left: 2px solid rgb(51, 63, 41);
+  border-bottom: 2px solid rgb(51, 63, 41);
+}
+
+/* Legendary Cards Properties */
+
+.legendary-inner-border-color {
+  background-image: linear-gradient(rgba(239, 184, 16, 0.5),rgba(239, 184, 16, 0.5)), url("../../images/Textures/seamless-1747007_1280.jpg");
+}
+
+.legendary-title-color {
+  background-image: linear-gradient(rgba(255, 209, 54, 0.8),rgba(255, 209, 54, 0.8)), url("../../images/Textures/seamless-1747007_1280.jpg");
+  border: 2px solid rgb(76, 59, 20);
+}
+
+.legendary-type-color {
+  background-image: linear-gradient(rgba(255, 209, 54, 0.8),rgba(255, 209, 54, 0.8)), url("../../images/Textures/seamless-1747007_1280.jpg");
+  border: 2px solid rgb(76, 59, 20);
+}
+
+.legendary-explanation-color {
+  background-image: linear-gradient(rgba(255, 251, 99, 0.8),rgba(255, 251, 99, 0.8)), url("../../images/Textures/seamless-1747007_1280.jpg");
+  border-right: 2px solid rgb(76, 59, 20);
+  border-left: 2px solid rgb(76, 59, 20);
+  border-bottom: 2px solid rgb(76, 59, 20);
+}
+
+/* Epic Cards Properties */
+
+.epic-inner-border-color {
+  background-image: linear-gradient(rgba(171, 42, 62, 0.5),rgba(171, 42, 62, 0.5)), url("../../images/Textures/seamless-1747007_1280.jpg");
+}
+
+.epic-title-color {
+  background-image: linear-gradient(rgba(206, 118, 121, 0.8),rgba(206, 118, 121, 0.8)), url("../../images/Textures/seamless-1747007_1280.jpg");
+  border: 2px solid rgb(84, 29, 34);
+}
+
+.epic-type-color {
+  background-image: linear-gradient(rgba(206, 118, 121, 0.8),rgba(206, 118, 121, 0.8)), url("../../images/Textures/seamless-1747007_1280.jpg");
+  border: 2px solid rgb(84, 29, 34);
+}
+
+.epic-explanation-color {
+  background-image: linear-gradient(rgba(235, 186, 186, 0.8),rgba(235, 186, 186, 0.8)), url("../../images/Textures/seamless-1747007_1280.jpg");
+  border-right: 2px solid rgb(84, 29, 34);
+  border-left: 2px solid rgb(84, 29, 34);
+  border-bottom: 2px solid rgb(84, 29, 34);
+}
+
+/* Normal Cards Properties */
+
+.normal-inner-border-color {
+  background-image: linear-gradient(rgba(187, 187, 187, 0.5),rgba(187, 187, 187, 0.5)), url("../../images/Textures/seamless-1747007_1280.jpg");
+}
+
+.normal-title-color {
+  background-image: linear-gradient(rgba(221, 221, 221, 0.8),rgba(221, 221, 221, 0.8)), url("../../images/Textures/seamless-1747007_1280.jpg");
+  border: 2px solid rgb(51, 51, 51);
+}
+
+.normal-type-color {
+  background-image: linear-gradient(rgba(221, 221, 221, 0.8),rgba(221, 221, 221, 0.8)), url("../../images/Textures/seamless-1747007_1280.jpg");
+  border: 2px solid rgb(51, 51, 51);
+}
+
+.normal-explanation-color {
+  background-image: linear-gradient(rgba(238, 238, 238, 0.8),rgba(238, 238, 238, 0.8)), url("../../images/Textures/seamless-1747007_1280.jpg");
+  border-right: 2px solid rgb(51, 51, 51);
+  border-left: 2px solid rgb(51, 51, 51);
+  border-bottom: 2px solid rgb(51, 51, 51);
+}

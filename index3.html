@@ -1,14 +1,53 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-  <script src="main.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="styles/css/style3.css">
+ 
 </head>
 <body>
-  
+  <div class ="container">
+    <div id="player1Table" class="normal-display">
+      <!-- Este div será para colocar el personaje -->
+      <div class="player-character-table">
+      </div>
+      <!-- Este div será para colocar las habilidades -->
+      <div class= "normal-display">
+        <div class="card-frame darkgrey-background"></div>
+        <div class="card-frame darkgrey-background"></div>
+        <div class="card-frame darkgrey-background"></div>
+        <div class="card-frame darkgrey-background"></div>
+      </div>
+    </div>
+    <!-- Aquí estará el deck del juego -->
+    <div id="player1Deck" class="normal-display">
+      <div>
+        <div class="card-frame beige-background"></div>
+      </div>
+      <!-- Aquí estarán las habilidades de los personajes -->
+      <div class="normal-display">
+        <div class="card-frame khaki-background"></div>
+        <div class="card-frame khaki-background"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+    
+  <div id="player2Deck"></div>
+
+  <script src="js/characters.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/criature.js"></script>
+  <script src="js/handleCards.js"></script>
+  <!-- <script src="js/index2.js"></script> -->
+  <!-- <script src="js/game.js"></script> -->
+  <script src="js/index3.js"></script>
+
 </body>
 </html>

@@ -8,12 +8,45 @@
   <link rel="stylesheet" type="text/css" media="screen" href="styles/css/style2.css">
 </head>
 <body>
-  <div id="characters-display">
+  <!-- Este div será para la parte de seleccion de campeones de los dos jugadores -->
+  <div class= "container grey-background">
+    <div class= "card-section">
+      <h2>Players Deck</h2>
+      <div class= "card-display"> 
+        <div id="player1" class="drop-destination" ondrop="dropHandler(event)" ondragover="dragHandler(event)"></div>
+        <div id="player2" class="drop-destination" ondrop="dropHandler(event)" ondragover="dragHandler(event)"></div>
+      </div>
+    </div>
+    <div class="btn-position">
+      <button class="btn arena">GO TO ARENA</button>
+    </div>
   </div>
 
+  <div class= "container"> 
+    <div class = "card-section">
+      <div id= "characters-display" class="card-display" ondrop="dropHandler(event)" ondragover="dragHandler(event)"></div>
+    </div>
+  </div> 
+
+  <div class= "container black-background">
+    <div class = "card-section">
+      <div id= "legendary-display" class= "card-display"></div>
+    </div>
+    <div class = "card-section">
+      <div id= "epic-display" class= "card-display"></div>
+    </div>
+    <div class = "card-section">
+      <div id= "normal-display" class= "card-display"></div>
+    </div>
+  </div>
+ 
+
   <script src="js/characters.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/handleCards.js"></script>
   <script src="js/index2.js"></script>
-  <script src="js/game.js"></script>
+  <!-- <script src="js/game.js"></script> -->
 </body>
 </html>
 

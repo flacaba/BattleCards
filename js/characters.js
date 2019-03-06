@@ -6,9 +6,9 @@ var characters = [{
   defense: 100,
   health: 2000,
   mana: 8,
-  img:"rna-159-bolrac-clan-crusher.jpg",
-  exlanation:"",
-  special_hability: function() {
+  img:"images/main_characters/rna-159-bolrac-clan-crusher.jpg",
+  explanation:"",
+  specialHability: function() {
   }
 },
 {
@@ -19,9 +19,9 @@ var characters = [{
   defense: 50,
   health: 1200,
   mana: 12,
-  img:"rna-162-clan-guildmage.jpg",
-  exlanation:"",
-  special_hability: function() {
+  img:"images/main_characters/rna-162-clan-guildmage.jpg",
+  explanation:"",
+  specialHability: function() {
   }
 },
 {
@@ -32,9 +32,9 @@ var characters = [{
   defense: 80,
   health: 1500,
   mana: 8,
-  img: "rna-154-azorius-knight-arbiter.jpg",
-  exlanation:"",
-  special_hability: function() {
+  img: "images/main_characters/rna-154-azorius-knight-arbiter.jpg",
+  explanation:"",
+  specialHability: function() {
   }
 },
 {
@@ -45,8 +45,8 @@ var characters = [{
   defense: 80,
   health: 1200,
   mana: 10,
-  img:"rna-97-dagger-caster.jpg",
-  exlanation:"",
-  special_hability: function() {
+  img:"images/main_characters/rna-97-dagger-caster.jpg",
+  explanation:"",
+  specialHability: function() {
   }
 }]
