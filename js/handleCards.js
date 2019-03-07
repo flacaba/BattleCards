@@ -62,3 +62,9 @@ function generateCards (array, parent,draggable) {
   });
   parent.innerHTML = card;
 }
+
+function getRandomCard () {
+  var maxNumber = habilities.length;
+  var i = Math.floor(Math.random()*maxNumber) ;
+  return i;
+}

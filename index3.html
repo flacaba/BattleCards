@@ -10,9 +10,12 @@
 </head>
 <body>
   <div class ="container">
+    <div class="btn-position">
+        <button class="btn start-game">START GAME</button>
+    </div>
     <div id="player1Table" class="normal-display">
       <!-- Este div será para colocar el personaje -->
-      <div class="player-character-table">
+      <div class="player1-character-table">
       </div>
       <!-- Este div será para colocar las habilidades -->
       <div class= "normal-display">
@@ -21,6 +24,8 @@
         <div class="card-frame darkgrey-background"></div>
         <div class="card-frame darkgrey-background"></div>
       </div>
+      <button class="btn turn-player1">FINISH TURN</button>
+ 
     </div>
     <!-- Aquí estará el deck del juego -->
     <div id="player1Deck" class="normal-display">
@@ -33,20 +38,38 @@
         <div class="card-frame khaki-background"></div>
       </div>
     </div>
+
+    <div id="player2Deck" class="normal-display">
+        <div>
+          <div class="card-frame beige-background"></div>
+        </div>
+        <!-- Aquí estarán las habilidades de los personajes -->
+        <div class="normal-display">
+          <div class="card-frame khaki-background"></div>
+          <div class="card-frame khaki-background"></div>
+        </div>
+      </div>
+      <div id="player2Table" class="normal-display">
+          <!-- Este div será para colocar el personaje -->
+          <div class="player2-character-table">
+          </div>
+          <!-- Este div será para colocar las habilidades -->
+          <div class= "normal-display">
+            <div class="card-frame darkgrey-background"></div>
+            <div class="card-frame darkgrey-background"></div>
+            <div class="card-frame darkgrey-background"></div>
+            <div class="card-frame darkgrey-background"></div>
+          </div>
+          <button class="btn turn-player2">FINISH TURN</button>
+        </div>
   </div>
-
-
-
-    
-  <div id="player2Deck"></div>
-
   <script src="js/characters.js"></script>
   <script src="js/cards.js"></script>
   <script src="js/player.js"></script>
   <script src="js/criature.js"></script>
   <script src="js/handleCards.js"></script>
   <!-- <script src="js/index2.js"></script> -->
-  <!-- <script src="js/game.js"></script> -->
+  <script src="js/game.js"></script>
   <script src="js/index3.js"></script>
 
 </body>
