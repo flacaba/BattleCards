@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- saved from url=(0093)file:///Users/fernandolacabaherrera/Desktop/Ironhack/Project%201/Code/BattleCards/index3.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="file:///Users/fernandolacabaherrera/Desktop/Ironhack/Project%201/Code/BattleCards/styles/css/style3.css">
+ 
+</head>
+<body>
+  <div class="container">
+    <div class="btn-position">
+        <button class="btn start-game">START GAME</button>
+    </div>
+    <div id="player1Table" class="normal-display">
+      <!-- Este div será para colocar el personaje -->
+      <div class="player1-character-table"><div class="card-outer-border" id="drag0" draggable="true" ondragstart="dragStartHandler(event)">
+     <div class="card-inner-border character-inner-border-color">
+       <div class="card-title character-title-color">Aplastador del clan Bolrac</div>
+       <div class="card-img" style="background: center/cover url(images/main_characters/rna-159-bolrac-clan-crusher.jpg) no-repeat"></div>
+       <div class="card-type character-type-color">Tanque</div>
+       <div class="card-explanation character-explanation-color"></div>
+     </div>
+    </div></div>
+      <!-- Este div será para colocar las habilidades -->
+      <div class="normal-display">
+        <div class="card-frame darkgrey-background"></div>
+        <div class="card-frame darkgrey-background"></div>
+        <div class="card-frame darkgrey-background"></div>
+        <div class="card-frame darkgrey-background"><div class="card-outer-border" id="drag4" draggable="true" ondragstart="dragStartHandler(event)">
+     <div class="card-inner-border normal-inner-border-color">
+       <div class="card-title normal-title-color">Relicario orzhov</div>
+       <div class="card-img" style="background: center/cover url(images/cards/17-rna-236-orzhov-locket.jpg) no-repeat"></div>
+       <div class="card-type normal-type-color">Normal</div>
+       <div class="card-explanation normal-explanation-color">Restaura un 25% de la vida restante.</div>
+     </div>
+    </div></div>
+      </div>
+      <button class="btn turn-player1">FINISH TURN</button>
+ 
+    </div>
+    <!-- Aquí estará el deck del juego -->
+    <div id="player1Deck" class="normal-display">
+      <div>
+        <div class="card-frame beige-background" ondrop="dropHandler(event)" ondragover="dragHandler(event)"><div class="card-outer-border" id="drag1" draggable="true" ondragstart="dragStartHandler(event)">
+     <div class="card-inner-border legendary-inner-border-color">
+       <div class="card-title legendary-title-color">Lianas de ceniza</div>
+       <div class="card-img" style="background: center/cover url(images/cards/07-rna-161-cindervines.jpg) no-repeat"></div>
+       <div class="card-type legendary-type-color">Legendaria</div>
+       <div class="card-explanation legendary-explanation-color">Inflige 500 de daño al aponente directamente.</div>
+     </div>
+    </div></div>
+      </div>
+      <!-- Aquí estarán las habilidades de los personajes -->
+      <div class="normal-display">
+        <div class="card-frame khaki-background" ondrop="dropHandler(event)" ondragover="dragHandler(event)"><div class="card-outer-border" id="drag2" draggable="true" ondragstart="dragStartHandler(event)">
+     <div class="card-inner-border legendary-inner-border-color">
+       <div class="card-title legendary-title-color">Mutilador de chapiteles</div>
+       <div class="card-img" style="background: center/cover url(images/cards/20-rna-86-spire-mangler.jpg) no-repeat"></div>
+       <div class="card-type legendary-type-color">Legendaria. Criatura</div>
+       <div class="card-explanation legendary-explanation-color">Elimina a la criatura del oponente y además inflige 100 de daño al adversario.</div>
+     </div>
+    </div></div>
+        <div class="card-frame khaki-background" ondrop="dropHandler(event)" ondragover="dragHandler(event)"><div class="card-outer-border" id="drag3" draggable="true" ondragstart="dragStartHandler(event)">
+     <div class="card-inner-border normal-inner-border-color">
+       <div class="card-title normal-title-color">Pago final</div>
+       <div class="card-img" style="background: center/cover url(images/cards/10-rna-171-final-payment.jpg) no-repeat"></div>
+       <div class="card-type normal-type-color">Normal</div>
+       <div class="card-explanation normal-explanation-color">Reduce en un punto el coste mana de todas las cartas en ese turno.</div>
+     </div>
+    </div></div>
+      </div>
+    </div>
+
+    <div id="player2Deck" class="normal-display">
+        <div>
+          <div class="card-frame beige-background" ondrop="dropHandler(event)" ondragover="dragHandler(event)"><div class="card-outer-border" id="drag6" draggable="true" ondragstart="dragStartHandler(event)">
+     <div class="card-inner-border normal-inner-border-color">
+       <div class="card-title normal-title-color">Marcar al rojo vivo</div>
+       <div class="card-img" style="background: center/cover url(images/cards/06-rna-64-bladebrand.jpg) no-repeat"></div>
+       <div class="card-type normal-type-color">Normal</div>
+       <div class="card-explanation normal-explanation-color">Inflinge 50 de daño al aponente directamente.</div>
+     </div>
+    </div></div>
+        </div>
+        <!-- Aquí estarán las habilidades de los personajes -->
+        <div class="normal-display">
+          <div class="card-frame khaki-background" ondrop="dropHandler(event)" ondragover="dragHandler(event)"><div class="card-outer-border" id="drag7" draggable="true" ondragstart="dragStartHandler(event)">
+     <div class="card-inner-border normal-inner-border-color">
+       <div class="card-title normal-title-color">Marcar al rojo vivo</div>
+       <div class="card-img" style="background: center/cover url(images/cards/06-rna-64-bladebrand.jpg) no-repeat"></div>
+       <div class="card-type normal-type-color">Normal</div>
+       <div class="card-explanation normal-explanation-color">Inflinge 50 de daño al aponente directamente.</div>
+     </div>
+    </div></div>
+          <div class="card-frame khaki-background" ondrop="dropHandler(event)" ondragover="dragHandler(event)"><div class="card-outer-border" id="drag8" draggable="true" ondragstart="dragStartHandler(event)">
+     <div class="card-inner-border legendary-inner-border-color">
+       <div class="card-title legendary-title-color">Lianas de ceniza</div>
+       <div class="card-img" style="background: center/cover url(images/cards/07-rna-161-cindervines.jpg) no-repeat"></div>
+       <div class="card-type legendary-type-color">Legendaria</div>
+       <div class="card-explanation legendary-explanation-color">Inflige 500 de daño al aponente directamente.</div>
+     </div>
+    </div></div>
+        </div>
+      </div>
+      <div id="player2Table" class="normal-display">
+          <!-- Este div será para colocar el personaje -->
+          <div class="player2-character-table"><div class="card-outer-border" id="drag5" draggable="true" ondragstart="dragStartHandler(event)">
+     <div class="card-inner-border character-inner-border-color">
+       <div class="card-title character-title-color">Maga del gremio del Clan</div>
+       <div class="card-img" style="background: center/cover url(images/main_characters/rna-162-clan-guildmage.jpg) no-repeat"></div>
+       <div class="card-type character-type-color">Mago</div>
+       <div class="card-explanation character-explanation-color"></div>
+     </div>
+    </div></div>
+          <!-- Este div será para colocar las habilidades -->
+          <div class="normal-display">
+            <div class="card-frame darkgrey-background"></div>
+            <div class="card-frame darkgrey-background"></div>
+            <div class="card-frame darkgrey-background"></div>
+            <div class="card-frame darkgrey-background"><div class="card-outer-border" id="drag9" draggable="true" ondragstart="dragStartHandler(event)">
+     <div class="card-inner-border normal-inner-border-color">
+       <div class="card-title normal-title-color">Portales en llamas</div>
+       <div class="card-img" style="background: center/cover url(images/cards/13-rna-102-gates-ablaze.jpg) no-repeat"></div>
+       <div class="card-type normal-type-color">Normal</div>
+       <div class="card-explanation normal-explanation-color">Reduce en un 10% el daño recibido en el seguiente turno.</div>
+     </div>
+    </div></div>
+          </div>
+          <button class="btn turn-player2">FINISH TURN</button>
+        </div>
+  </div>
+  <script src="file:///Users/fernandolacabaherrera/Desktop/Ironhack/Project%201/Code/BattleCards/js/characters.js"></script>
+  <script src="file:///Users/fernandolacabaherrera/Desktop/Ironhack/Project%201/Code/BattleCards/js/cards.js"></script>
+  <script src="file:///Users/fernandolacabaherrera/Desktop/Ironhack/Project%201/Code/BattleCards/js/player.js"></script>
+  <script src="file:///Users/fernandolacabaherrera/Desktop/Ironhack/Project%201/Code/BattleCards/js/criature.js"></script>
+  <script src="file:///Users/fernandolacabaherrera/Desktop/Ironhack/Project%201/Code/BattleCards/js/handleCards.js"></script>
+  <script src="file:///Users/fernandolacabaherrera/Desktop/Ironhack/Project%201/Code/BattleCards/js/game.js"></script>
+  <script src="file:///Users/fernandolacabaherrera/Desktop/Ironhack/Project%201/Code/BattleCards/js/index3.js"></script>
+
+
+</body></html>

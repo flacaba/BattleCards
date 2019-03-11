@@ -14,10 +14,11 @@ function getPlayer (player) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  generateCards(characters, characterParent,true);
-  generateCards(legendaryHabilities, legendaryParent,false);
-  generateCards(epicHabilities, epicParent,false);
-  generateCards(normalHabilities, normalParent,false);
+  generateCards(characters, characterParent);
+  makeItDraggable(characterParent);
+  generateCards(legendaryHabilities, legendaryParent);
+  generateCards(epicHabilities, epicParent);
+  generateCards(normalHabilities, normalParent);
 
   var btnBeginGame = document.querySelector(".arena");
 
