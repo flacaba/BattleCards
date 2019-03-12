@@ -15,26 +15,20 @@ function Player (obj,name) {
   this.playerTable = document.getElementById(name + "Table");
   this.characterPosition = this.playerTable.querySelector(".player-character-table");
   this.characterProperties = this.playerTable.querySelector(".player-character-properties");
+  this.habilitiesTable = this.playerTable.querySelectorAll(".card-frame darkgrey-background");
   this.creaturePosition = this.playerDeck.querySelector(".creature");
   this.creatureProperties = this.playerDeck.querySelector(".creature-properties");
   this.hability1Position = this.playerDeck.querySelector(".hability1");
   this.hability2Position = this.playerDeck.querySelector(".hability2");
   this.hability1Properties = this.playerDeck.querySelector(".hability1-properties");
   this.hability2Properties = this.playerDeck.querySelector(".hability2-properties");
-  this.previousCreature = "";
-  this.creature;
-  this.hability1;
-  this.hability2;  
 }
 
-Player.prototype.isCreature = function() {
-  
+Player.prototype.isCreature = function() {  
   if (this.creaturePosition.querySelector(".card-title") === null) {
     this.creature = new Creature(empty);
-    this.previousCreature = "";
-
-  } else {    
-    if(this.previousCreature.name !== "") {
+  } else {   
+    if(this.creature.name === "") {
       var creatureName = this.creaturePosition.querySelector(".card-title").innerText;
       var currentCreature = habilities.filter(function(obj){
         return obj.name === creatureName;
@@ -90,7 +84,6 @@ Player.prototype.drawHealth = function(where) {
   var healthPosition = where.querySelector(".health");
   healthPosition.querySelector(".text-specs").innerText = this.health;
   this.drawHealthBar(healthPosition);
-  
 }
 
 Player.prototype.drawMana = function(where) {
@@ -112,15 +105,72 @@ Player.prototype.drawDefense = function(where) {
 Player.prototype.drawHealthBar = function(where) {
   var healthBar = where.querySelector(".actual");
   var currentHealthLength = (this.health/this.health0)*100;
-  healthBar.setAttribute ("width",currentHealthLength +"%");
+  healthBar.style.width = currentHealthLength +"%";
 }
 
 Player.prototype.drawManaBar = function(where) {
   var healthBar = where.querySelector(".actual");
   var currentManaLength = (this.mana/this.mana0)*100;
-  healthBar.setAttribute ("width",currentManaLength +"%");
+  healthBar.style.width = currentManaLength +"%";
 }
 
-Player.prototype.attack = function(opponent) {
+Player.prototype.makeAttack = function(opponent) {
 
+  // this.creature.specialHability(opponent);
+  // this.hability1.specialHability(opponent);
+  // this.hability2.specialHability(opponent);
+  this.attackPower = this.attack + this.creature.attack;
+  if(opponent.creature.health !== 0) {
+    this.attackCreature(opponent);
+  } else {
+    this.attackPlayer(opponent);
+  }
+}
+
+Player.prototype.attackCreature = function(opponent) {
+  switch (true) {
+    case (this.attackPower >= (opponent.creature.health + opponent.creature.defense)):
+      this.attackPower = this.attackPower - (opponent.creature.health + opponent.creature.defense);
+      opponent.creature.health = 0;
+      this.attackPlayer(opponent);
+      break;
+    case (this.attackPower > opponent.creature.defense):
+      opponent.creature.health = opponent.creature.health - this.attackPower + opponent.creature.defense;
+      break
+  }
+}
+
+Player.prototype.attackPlayer = function (opponent) {
+  switch (true) {
+    case (this.attackPower >= (opponent.health + opponent.defense)):
+      opponent.health = 0;
+      break;
+    case (this.attackPower > opponent.defense):
+      opponent.health = opponent.health - this.attackPower + opponent.defense;
+      break;
+  }
+}
+
+
+Player.prototype.creatureAlive = function () {
+  if(this.creature.health === 0) {
+    this.creaturePosition.innerHTML = "";
+    this.creature = new Creature(empty);
+  }
+}
+
+Player.prototype.minusMana = function() {
+  if(this.mana > (this.creature.mana - this.hability1.mana - this.hability2.mana)) {
+    this.mana = this.mana - this.creature.mana - this.hability1.mana - this.hability2.mana;
+  } else {
+    this.mana = 0;
+  }  
+}
+
+Player.prototype.plusMana = function() {
+  if(this.mana < (this.mana0-3)) {
+    this.mana = this.mana + 3
+  } else {
+    this.mana = this.mana0;
+  }
 }

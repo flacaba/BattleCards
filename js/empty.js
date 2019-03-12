@@ -6,5 +6,6 @@ var empty = {
   attack: 0,
   defense: 0,
   health: 0,
+  health0: 100,
   mana: 0,
 }
