@@ -2,10 +2,10 @@ var empty = {
   name: "",
   type: "",
   card:"",
-  criature: false,
+  creature: false,
   attack: 0,
   defense: 0,
   health: 0,
-  health0: 100,
+  health0: 0,
   mana: 0,
 }

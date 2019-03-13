@@ -2,6 +2,7 @@ function Creature (obj) {
   this.name = obj.name;
   this.attack = obj.attack;
   this.defense = obj.defense;
+  this.maybeCreature = obj.creature;
   this.mana0 = obj.mana;
   this.health0 = obj.health;
   this.specialHability = obj.specialHability;
@@ -20,7 +21,6 @@ Creature.prototype.drawHealth = function(where) {
   var healthPosition = where.querySelector(".health");
   healthPosition.querySelector(".text-specs").innerText = this.health;
   this.drawHealthBar(where);
-  
 }
 
 Creature.prototype.drawMana = function(where) {
@@ -40,6 +40,11 @@ Creature.prototype.drawDefense = function(where) {
 
 Creature.prototype.drawHealthBar = function(where) {
   var healthBar = where.querySelector('.actual');
-  var currentHealhtLength = (this.health / this.health0) * 100;
+  var currentHealhtLength;
+  if (this.name === "") {
+    currentHealhtLength = 0;
+  } else {
+    currentHealhtLength = (this.health / this.health0) * 100;
+  }
   healthBar.style.width = currentHealhtLength +"%";
 }

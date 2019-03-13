@@ -1,5 +1,3 @@
-// var clone;
-// var currentNode;
 var countDraggables = 0;
 
 
@@ -15,20 +13,9 @@ var normalHabilities = habilities.filter(function (obj) {
   return obj.card === "normal";
 })
 
-// function getNodePosition (node) {
-//   var child = node;
-//   var i = 0;
-//   while( (child = child.previousSibling) != null ) 
-//     i++;
-//   return i;
-// }
-
-
 function dragStartHandler(ev) {
   ev.dataTransfer.setData("text/plain", ev.target.id);
   ev.dropEffect = "move";
-  // clone = ev.target.cloneNode(true);
-  // currentNode = getNodePosition(ev.target);
 }
 
 function dragHandler(ev) {

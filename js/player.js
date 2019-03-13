@@ -15,7 +15,8 @@ function Player (obj,name) {
   this.playerTable = document.getElementById(name + "Table");
   this.characterPosition = this.playerTable.querySelector(".player-character-table");
   this.characterProperties = this.playerTable.querySelector(".player-character-properties");
-  this.habilitiesTable = this.playerTable.querySelectorAll(".card-frame darkgrey-background");
+  this.habilitiesDeck = this.playerTable.querySelector(".habilities-deck");
+  this.habilitiesTable = this.playerTable.getElementsByClassName("card-frame darkgrey-background");
   this.creaturePosition = this.playerDeck.querySelector(".creature");
   this.creatureProperties = this.playerDeck.querySelector(".creature-properties");
   this.hability1Position = this.playerDeck.querySelector(".hability1");
@@ -35,9 +36,7 @@ Player.prototype.isCreature = function() {
       })
       this.creature = new Creature(currentCreature[0]);
     }
-  
-  }
-  
+  } 
   this.creature.drawAtt(this.creatureProperties);
 }
 
@@ -151,17 +150,17 @@ Player.prototype.attackPlayer = function (opponent) {
   }
 }
 
-
 Player.prototype.creatureAlive = function () {
   if(this.creature.health === 0) {
     this.creaturePosition.innerHTML = "";
     this.creature = new Creature(empty);
   }
 }
-
+  
 Player.prototype.minusMana = function() {
-  if(this.mana > (this.creature.mana - this.hability1.mana - this.hability2.mana)) {
-    this.mana = this.mana - this.creature.mana - this.hability1.mana - this.hability2.mana;
+  if(this.mana > (this.creature.mana0 - this.hability1.mana - this.hability2.mana)) {
+    this.mana = this.mana - this.creature.mana0 - this.hability1.mana - this.hability2.mana;
+    this.creature.mana0 = 0;
   } else {
     this.mana = 0;
   }  
@@ -173,4 +172,25 @@ Player.prototype.plusMana = function() {
   } else {
     this.mana = this.mana0;
   }
+}
+
+Player.prototype.newHabilities = function() {
+  var arr = [].slice.call(this.habilitiesTable);
+
+  var newHabilities = arr.filter(function(node) {
+    return node.firstChild === null;
+  })
+  if(newHabilities.length !== 0) {
+    for(i=0; i<newHabilities.length; i++){
+      this.PlayerRandomCard = [habilities[getRandomCard()]];
+      generateCards(this.PlayerRandomCard,newHabilities[i]);
+    }
+  }
+}
+
+Player.prototype.removeCurrentHabilities = function() {
+  this.hability1Position.innerHTML = "";
+  this.hability2Position.innerHTML = "";
+  this.hability1 = new playerHabilities(empty);
+  this.hability2 = new playerHabilities(empty);
 }

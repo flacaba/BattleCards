@@ -37,7 +37,7 @@
           <div class="total"></div>
         </div>
         <div class="defense normal-display">
-          <img src="images/icons/defense.jpeg" class="img-prop">
+          <img src="images/icons/defense.png" class="img-prop">
           <div class="text-specs"></div>
           <div class="total"></div>
         </div>
@@ -55,77 +55,10 @@
  
     </div>
     <!-- Aquí estará el deck del juego -->
-    <div id="player1Deck" class="normal-display">
-      <div class="creature-table normal-display">
-        <div class="card-frame beige-background creature"></div>
-        <div class="creature-properties">        
-            <div class="health normal-display">
-              <img src="images/icons/life.png" class="img-prop">
-              <div class="text-specs"></div>
-              <div class="total black-background">
-                <div class="actual green-background"></div>
-              </div>
-            </div>
-            <div class="mana normal-display">
-              <img src="images/icons/mana.png" class="img-prop">
-              <div class="text-specs"></div>
-            </div>
-            <div class="attack normal-display">
-              <img src="images/icons/attack.png" class="img-prop">
-              <div class="text-specs"></div>
-            </div>
-            <div class="defense normal-display">
-              <img src="images/icons/defense.jpeg" class="img-prop">
-              <div class="text-specs"></div>
-            </div>
-          </div>
-      </div>
-      <!-- Aquí estarán las habilidades de los personajes -->
-      <div class="habilities normal-display">
-        <div class="card-frame khaki-background hability1"></div>
-        <div class="hability1-properties">
-          <div class="health normal-display">
-            <img src="images/icons/life.png" class="img-prop">
-            <div class="text-specs"></div>
-          </div>
-          <div class="mana normal-display">
-            <img src="images/icons/mana.png" class="img-prop">
-            <div class="text-specs"></div>
-          </div>
-          <div class="attack normal-display">
-            <img src="images/icons/attack.png" class="img-prop">
-            <div class="text-specs"></div>
-          </div>
-          <div class="defense normal-display">
-            <img src="images/icons/defense.jpeg" class="img-prop">
-            <div class="text-specs"></div>
-          </div>
-        </div>
-        <div class="card-frame khaki-background hability2"></div>
-        <div class="hability2-properties">
-          <div class="health normal-display">
-            <img src="images/icons/life.png" class="img-prop">
-            <div class="text-specs"></div>
-          </div>
-          <div class="mana normal-display">
-            <img src="images/icons/mana.png" class="img-prop">
-            <div class="text-specs"></div>
-          </div>
-          <div class="attack normal-display">
-            <img src="images/icons/attack.png" class="img-prop">
-            <div class="text-specs"></div>
-          </div>
-          <div class="defense normal-display">
-            <img src="images/icons/defense.jpeg" class="img-prop">
-            <div class="text-specs"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="player2Deck" class="normal-display">
+    <div class="deck">
+      <div id="player1Deck" class="normal-display">
         <div class="creature-table normal-display">
-          <div class="card-frame beige-background creature" ></div>
+          <div class="card-frame beige-background creature"></div>
           <div class="creature-properties">        
               <div class="health normal-display">
                 <img src="images/icons/life.png" class="img-prop">
@@ -143,7 +76,7 @@
                 <div class="text-specs"></div>
               </div>
               <div class="defense normal-display">
-                <img src="images/icons/defense.jpeg" class="img-prop">
+                <img src="images/icons/defense.png" class="img-prop">
                 <div class="text-specs"></div>
               </div>
             </div>
@@ -165,7 +98,7 @@
               <div class="text-specs"></div>
             </div>
             <div class="defense normal-display">
-              <img src="images/icons/defense.jpeg" class="img-prop">
+              <img src="images/icons/defense.png" class="img-prop">
               <div class="text-specs"></div>
             </div>
           </div>
@@ -184,12 +117,87 @@
               <div class="text-specs"></div>
             </div>
             <div class="defense normal-display">
-              <img src="images/icons/defense.jpeg" class="img-prop">
+              <img src="images/icons/defense.png" class="img-prop">
               <div class="text-specs"></div>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="error no-display">
+        <img src="images/icons/warn.png" class="warn">
+        <p></p>
+      </div>
+
+      <div id="player2Deck" class="normal-display">
+          <div class="creature-table normal-display">
+            <div class="card-frame beige-background creature" ></div>
+            <div class="creature-properties">        
+                <div class="health normal-display">
+                  <img src="images/icons/life.png" class="img-prop">
+                  <div class="text-specs"></div>
+                  <div class="total black-background">
+                    <div class="actual green-background"></div>
+                  </div>
+                </div>
+                <div class="mana normal-display">
+                  <img src="images/icons/mana.png" class="img-prop">
+                  <div class="text-specs"></div>
+                </div>
+                <div class="attack normal-display">
+                  <img src="images/icons/attack.png" class="img-prop">
+                  <div class="text-specs"></div>
+                </div>
+                <div class="defense normal-display">
+                  <img src="images/icons/defense.png" class="img-prop">
+                  <div class="text-specs"></div>
+                </div>
+              </div>
+          </div>
+          <!-- Aquí estarán las habilidades de los personajes -->
+          <div class="habilities normal-display">
+            <div class="card-frame khaki-background hability1"></div>
+            <div class="hability1-properties">
+              <div class="health normal-display">
+                <img src="images/icons/life.png" class="img-prop">
+                <div class="text-specs"></div>
+              </div>
+              <div class="mana normal-display">
+                <img src="images/icons/mana.png" class="img-prop">
+                <div class="text-specs"></div>
+              </div>
+              <div class="attack normal-display">
+                <img src="images/icons/attack.png" class="img-prop">
+                <div class="text-specs"></div>
+              </div>
+              <div class="defense normal-display">
+                <img src="images/icons/defense.png" class="img-prop">
+                <div class="text-specs"></div>
+              </div>
+            </div>
+            <div class="card-frame khaki-background hability2"></div>
+            <div class="hability2-properties">
+              <div class="health normal-display">
+                <img src="images/icons/life.png" class="img-prop">
+                <div class="text-specs"></div>
+              </div>
+              <div class="mana normal-display">
+                <img src="images/icons/mana.png" class="img-prop">
+                <div class="text-specs"></div>
+              </div>
+              <div class="attack normal-display">
+                <img src="images/icons/attack.png" class="img-prop">
+                <div class="text-specs"></div>
+              </div>
+              <div class="defense normal-display">
+                <img src="images/icons/defense.png" class="img-prop">
+                <div class="text-specs"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
       <div id="player2Table" class="normal-display">
           <!-- Este div será para colocar el personaje -->
         <div class="player-character-table"></div>
@@ -214,7 +222,7 @@
             <div class="total"></div>
           </div>
           <div class="defense normal-display">
-            <img src="images/icons/defense.jpeg" class="img-prop">
+            <img src="images/icons/defense.png" class="img-prop">
             <div class="text-specs"></div>
             <div class="total"></div>
           </div>
