@@ -10,7 +10,6 @@ function Game (objA, objB) {
   generateCards([this.player2],this.player2.characterPosition);
   this.player1.drawAtt();
   this.player2.drawAtt();
-  this.isErrorCreature = false;
   this.error = document.querySelector(".error");
   this.player1FinishTurn = document.querySelector(".turn-player1");
   this.player2FinishTurn = document.querySelector(".turn-player2");
@@ -24,16 +23,26 @@ Game.prototype.start = function () {
  
   this.intervalId = setInterval(function() {
     this.drawAtt();
-    this.checkIfError(this.player1);
   }.bind(this),100)
 
   this.player1FinishTurn.onclick = function() {
-    this.finishTurn(this.player1,this.player2);
+    this.checkIfError(this.player1);
+    if(this.player1.isErrorCreature === false && this.player1.isNotEnoughMana === false) {
+      this.finishTurn(this.player1,this.player2);
+      this.changeButtonColours();
+      window.location ="index3.html#player2Table";
+    }
     // poner que se cambien los botones de color
   }.bind(this);
 
   this.player2FinishTurn.onclick = function() {
-    this.finishTurn(this.player2,this.player1);
+      this.checkIfError(this.player2);
+      if(this.player2.isErrorCreature === false && this.player2.isNotEnoughMana === false) {
+        this.finishTurn(this.player2,this.player1);
+        this.changeButtonColours();
+        window.location ="index3.html#player1Table";
+      }
+    
     // poner que se cambien los botones de color
   }.bind(this);
 }
@@ -83,7 +92,7 @@ Game.prototype.deactivateDragAndDrop = function(player) {
 
 Game.prototype.checkIfError = function (player) {
   this.checkIfCreature(player);
-  if(this.isErrorCreature === false) {
+  if(player.isErrorCreature === false) {
     this.checkMana(player);
   }
 }
@@ -92,10 +101,11 @@ Game.prototype.checkIfCreature = function(player) {
   if (player.creature.name !=="" && player.creature.maybeCreature !== true) {
     this.error.classList.remove("no-display");
     this.error.querySelector("p").innerText ="Insert a correct Creature";
-    this.isErrorCreature = true;
+    player.isErrorCreature = true;
+    
   } else {
     this.error.classList.add("no-display");
-    this.isErrorCreature = false;
+    player.isErrorCreature = false;
   }
 }
 
@@ -103,8 +113,26 @@ Game.prototype.checkMana = function(player) {
   if (player.mana < (player.creature.mana0 + player.hability1.mana + player.hability2.mana)) {
     this.error.classList.remove("no-display");
     this.error.querySelector("p").innerText ="Not enough mana";
+    player.isNotEnoughMana = true;
   } else {
     this.error.classList.add("no-display");
+    player.isNotEnoughMana = false;
+  }
+}
+
+Game.prototype.changeButtonColours = function() {
+  if (this.player1FinishTurn.classList.contains("btn-red") === true) {
+    this.player1FinishTurn.classList.replace("btn-red","btn-green")
+  } else {
+    debugger;
+    this.player1FinishTurn.classList.replace("btn-green","btn-red");
+  }
+
+  if (this.player2FinishTurn.classList.contains("btn-red") === true) {
+    debugger;
+    this.player2FinishTurn.classList.replace("btn-red","btn-green")
+  } else {
+    this.player2FinishTurn.classList.replace("btn-green","btn-red");
   }
 }
 

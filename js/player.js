@@ -11,6 +11,8 @@ function Player (obj,name) {
   this.specialHability = obj.specialHability;
   this.health = obj.health;
   this.mana = obj.mana;
+  this.isErrorCreature = false;
+  this.isNotEnoughMana = false;
   this.playerDeck = document.getElementById(name + "Deck");
   this.playerTable = document.getElementById(name + "Table");
   this.characterPosition = this.playerTable.querySelector(".player-character-table");

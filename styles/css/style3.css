@@ -6,7 +6,6 @@
 }
 
 body {
-  /* width: 1250px; */
   font-size:16px;
 }
 
@@ -23,21 +22,19 @@ h2 {
 }
 
 .grey-background {
-  background-image: linear-gradient(rgba(128, 128, 128, 0.8),rgba(128, 128, 128, 0.8)), url("../../images/Textures/seamless-1747007_1280.jpg");
+  background-image: linear-gradient(rgba(128, 128, 128, 0.8),rgba(128, 128, 128, 0.8)), url("../../images/icons/TexturesCom_BarkDecidious0194_1_seamless_S.jpg");
 }
 
 .darkgrey-background {
-  background-image: linear-gradient(rgba(169, 169, 169, 0.8),rgba(169, 169, 169, 0.8)), url("../../images/Textures/seamless-1747007_1280.jpg");
+  background-image: linear-gradient(rgba(250, 181, 112, 0.8),rgba(250, 181, 112, 0.8)), url("../../images/icons/TexturesCom_BarkDecidious0194_1_seamless_S.jpg");
 }
 
 .beige-background {
-  /* background-color: bisque; */
-  background-image: linear-gradient(rgba(255, 228, 196, 0.8),rgba(255, 228, 196, 0.8)), url("../../images/Textures/seamless-1747007_1280.jpg");
+  background-image: linear-gradient(rgba(255, 228, 196, 0.8),rgba(255, 228, 196, 0.8)), url("../../images/icons/TexturesCom_BarkDecidious0194_1_seamless_S.jpg");
 }
 
 .khaki-background {
-  /* background-color: darkkhaki;  */
-  background-image: linear-gradient(rgba(189, 183, 107, 0.8),rgba(189, 183, 107, 0.8)), url("../../images/Textures/seamless-1747007_1280.jpg"); 
+  background-image: linear-gradient(rgba(189, 183, 107, 0.8),rgba(189, 183, 107, 0.8)), url("../../images/icons/TexturesCom_BarkDecidious0194_1_seamless_S.jpg"); 
  }
 
  .green-background {
@@ -46,6 +43,10 @@ h2 {
 
  .blue-bakcground {
    background-color: blue;
+ }
+
+ .red-background {
+  background-image: linear-gradient(rgba(138, 5, 0, 0.8),rgba(138, 5, 0, 0.8)), url("../../images/icons/TexturesCom_BarkDecidious0194_1_seamless_S.jpg"); 
  }
 
 /* Cards display container classes */
@@ -89,13 +90,30 @@ h2 {
 .card-frame .card-outer-border { margin: 0; }
 
 .btn-position {
-  margin-left: 45%;
+  padding-left: 45%;
+  padding-top: 25px;
+  padding-bottom: 35px;
 }
 
 .btn {
   padding: 15px;
   border-radius: 10px;
   font-weight: bold;
+  color:white;
+  font-size: 0.9rem;
+  margin-left: 25px;
+}
+
+.btn-red {
+  background-color: rgb(216, 133, 127);
+  color: rgb(77, 14, 14);
+  border: 5px solid rgb(77, 14, 14);
+}
+
+.btn-green {
+  background-color: rgb(202, 238, 202);
+  color: rgb(0,100,0);
+  border: 5px solid rgb(0,100,0);
 }
 
 /* Common Cards Properties */
@@ -170,14 +188,34 @@ h2 {
 /* Player Selection Classes */
 
 .player-character-table {
-  background-image: url("../../images/icons/1315591.gif");
-  padding:1px 2px;
-  background-size:100% 100%;
+  position: relative;
+  margin:14px;
+  padding:5px;
+  width: 178px;
+  height: 248px; 
+  border-radius: 15px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .player-character-properties {
   margin-right: 40px;
   margin-left: 10px;
+}
+
+.player-character-table  .card-outer-border { margin: 0; }
+
+.player-character-table::before {
+  content: "";
+  position:absolute;
+  background-image: url("../../images/icons/character-border.png");
+  background-size: 100% 100%;
+  /* background-position: center; */
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -55px;
+  z-index: 5px;
+  pointer-events: none;
 }
 
 /* Characters Cards Properties */
@@ -352,9 +390,47 @@ h2 {
 /* Deck class */
 
 .deck {
-  margin: 50px 0px;
+  position: relative;
+  /* margin: 75px 0px; */
   padding: 50px 0;
   background-image:linear-gradient( rgba(238, 238, 238, 0.1),rgba(238, 238, 238, 0.1)),url("../../images/icons/TexturesCom_Grungemaps0173_6_seamless_S.png");
   background-repeat: repeat;
+  /* color:white; */
 }
+
+.deck::before {
+  content: "";
+  position: absolute;
+  background-image: url("../../images/icons/skull-border.png");
+  background-size: contain;
+  background-repeat: repeat-x;
+  top: -10px;
+  height:50px;
+  width: 100%;
+}
+
+.deck::after {
+  content: "";
+  position: absolute;
+  background-image: url("../../images/icons/skull-border.png");
+  background-size: contain;
+  background-repeat: repeat-x;
+  bottom: -22px;
+  height:50px;
+  width: 100%;
+} 
+
+#player1Table, #player2Table {  
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-image: url("../../images/icons/TexturesCom_WoodPlanksBare0186_1_seamless_S.jpg");
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+.not-showing {
+  display: none;
+}
+
+
 

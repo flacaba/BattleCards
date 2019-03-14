@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // generateCards(player2Representation,player2CharacterParent);
   var btnBeginFight = document.querySelector(".start-game");
   btnBeginFight.onclick = function() {
+    btnBeginFight.parentNode.classList.add("not-showing")
     // decidir donde tiene que estar start game
    game.start();
   } 

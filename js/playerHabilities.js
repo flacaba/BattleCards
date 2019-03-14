@@ -8,15 +8,9 @@ function playerHabilities (obj) {
 }
 
 playerHabilities.prototype.drawAtt = function(where) {
-  this.drawHealth(where);
   this.drawMana(where);
   this.drawAttack(where);
   this.drawDefense(where);
-}
-
-playerHabilities.prototype.drawHealth = function(where) {
-  var healthPosition = where.querySelector(".health");
-  healthPosition.querySelector(".text-specs").innerText = this.health;
 }
 
 playerHabilities.prototype.drawMana = function(where) {
