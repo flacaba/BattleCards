@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="styles/css/style2.css">
 </head>
-<body>
+<body> 
   <!-- Este div será para la parte de seleccion de campeones de los dos jugadores -->
-  <div class= "container grey-background">
+  <div class= "container tables">
     <div class= "card-section">
-      <h2>Players Deck</h2>
+      <h1>BattleCards</h1>
       <div class= "card-display"> 
         <div id="player1" class="drop-destination" ondrop="dropHandler(event)" ondragover="dragHandler(event)"></div>
         <div id="player2" class="drop-destination" ondrop="dropHandler(event)" ondragover="dragHandler(event)"></div>
@@ -22,20 +22,21 @@
     </div>
   </div>
 
-  <div class= "container"> 
-    <div class = "card-section">
+  <div class= "container black-background"> 
+    <div class = "card-section white">
+      <h3>MAIN CHARACTERS</h3>
       <div id= "characters-display" class="card-display" ondrop="dropHandler(event)" ondragover="dragHandler(event)"></div>
     </div>
-  </div> 
-
-  <div class= "container black-background">
-    <div class = "card-section">
+    <div class = "card-section yellow">
+      <h3>LEGENDARY CARDS</h3>
       <div id= "legendary-display" class= "card-display"></div>
     </div>
-    <div class = "card-section">
+    <div class = "card-section red">
+      <h3>EPIC CARDS</h3>
       <div id= "epic-display" class= "card-display"></div>
     </div>
-    <div class = "card-section">
+    <div class = "card-section grey">
+      <h3>NORMAL CARDS</h3>
       <div id= "normal-display" class= "card-display"></div>
     </div>
   </div>

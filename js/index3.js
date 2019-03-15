@@ -1,6 +1,6 @@
 
-var choosenPlayers = window.location.href.split("myvar=")[1];
-var character = choosenPlayers.split("%20").join(" ").split(",")
+const choosenPlayers = window.location.href.split("myvar=")[1];
+const character = choosenPlayers.split("%20").join(" ").split(",")
 
 
 function getCharacter (whichCharacter) {

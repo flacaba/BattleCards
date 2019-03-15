@@ -1,7 +1,4 @@
-// var player1 = new Player (characters[0]);
-// var player2 = new Player (characters[1]);
-// var creatures = document.querySelectorAll(".creature");
-// var habilitiesDeck = document.querySelectorAll(".habilities-deck");
+
 
 function Game (objA, objB) {
   this.player1 = new Player(objA,"player1");
@@ -32,7 +29,7 @@ Game.prototype.start = function () {
       this.finishTurn(this.player1,this.player2);
       this.checkEndGame();
       this.changeButtonColours();
-      window.location ="index3.html#player2Table";
+      // window.location ="index3.html#player2Table";
     }
   }.bind(this);
 
@@ -42,7 +39,7 @@ Game.prototype.start = function () {
         this.finishTurn(this.player2,this.player1);
         this.checkEndGame();
         this.changeButtonColours();
-        window.location ="index3.html#player1Table";
+        // window.location ="index3.html#player1Table";
       }
   }.bind(this);
 }
