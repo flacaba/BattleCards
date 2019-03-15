@@ -6,11 +6,7 @@ var players;
 
 function getPlayer (player) {
   var whichPlayer = document.getElementById(player);
-  var whichCharacter = whichPlayer.querySelector(".card-title").innerText;
-  var player = characters.filter(function(obj) {
-    return obj.name === whichCharacter;
-  })
-  return player[0];
+  return whichCharacter = whichPlayer.querySelector(".card-title").innerText;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -23,10 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var btnBeginGame = document.querySelector(".arena");
 
   btnBeginGame.onclick = function() {
-   players = [getPlayer("player1"),getPlayer("player2")];
-
-   fuckingnumber='hola'
-
-    window.location.href = `index3.html?myvar=${fuckingnumber}`;
+   players = getPlayer("player1") +"," + getPlayer("player2");
+   window.location.href = `index3.html?myvar=${players}`;
   }
 });

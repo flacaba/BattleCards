@@ -7,7 +7,7 @@ var characters = [{
   health: 2000,
   mana: 8,
   img:"images/main_characters/rna-159-bolrac-clan-crusher.jpg",
-  explanation:"",
+  explanation:"Jarhag descubrió que las formas y simetrías  que tanto complacieron al escultor también servían de equilibrada cachiporra.",
   specialHability: function() {
   }
 },
@@ -20,12 +20,12 @@ var characters = [{
   health: 1200,
   mana: 12,
   img:"images/main_characters/rna-162-clan-guildmage.jpg",
-  explanation:"",
+  explanation:"Desde el clan de los Vokaez llega, utilizando todo su poder, para destruir todo aquello que conocimos.",
   specialHability: function() {
   }
 },
 {
-  name: "Caballero árbitro azorio",
+  name: "Caballero arbitro azorio",
   type: "Guerrero",
   card:"character",
   attack: 300,
@@ -33,7 +33,7 @@ var characters = [{
   health: 1500,
   mana: 8,
   img: "images/main_characters/rna-154-azorius-knight-arbiter.jpg",
-  explanation:"",
+  explanation:"Las bestias de las limosnas se hicieron a un lado, los anarquistas inclinaron la cabeza e incluso los acróbatas rakdos se apartaron para dejarlo pasar.",
   specialHability: function() {
   }
 },
@@ -46,7 +46,7 @@ var characters = [{
   health: 1200,
   mana: 10,
   img:"images/main_characters/rna-97-dagger-caster.jpg",
-  explanation:"",
+  explanation:"Sigan, sigan acercandose. Tengo puñales para todos",
   specialHability: function() {
   }
 }]

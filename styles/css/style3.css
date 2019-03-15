@@ -15,6 +15,8 @@ h2 {
 
 
 
+
+
 /* Colours */
 
 .black-background {
@@ -52,8 +54,41 @@ h2 {
 /* Cards display container classes */
 
 .container {
+  position:relative;
   padding: 10px 0px;
 }
+
+.endGameUp {
+  position: absolute;
+  top:0;
+  width: 100%;
+  height: 50%;
+  pointer-events: none;
+
+}
+
+.endGameDown {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  pointer-events: none;
+}
+
+.winner {
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  padding-top:5%;
+  padding-left: 20%;
+}
+
+.loser {
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 10;
+  padding-top: 20%;
+  padding-left: 30%;
+}
+
 
 .normal-display {
   display: flex;

@@ -8,4 +8,5 @@ var empty = {
   health: 0,
   health0: 0,
   mana: 0,
+  specialHability: function(playerA,playerB) {}
 }

@@ -115,11 +115,10 @@ Player.prototype.drawManaBar = function(where) {
   healthBar.style.width = currentManaLength +"%";
 }
 
-Player.prototype.makeAttack = function(opponent) {
-
-  // this.creature.specialHability(opponent);
-  // this.hability1.specialHability(opponent);
-  // this.hability2.specialHability(opponent);
+Player.prototype.makeAttack = function(player,opponent) {
+  this.creature.specialHability(player,opponent);
+  this.hability1.specialHability(player,opponent);
+  this.hability2.specialHability(player,opponent);
   this.attackPower = this.attack + this.creature.attack;
   if(opponent.creature.health !== 0) {
     this.attackCreature(opponent);

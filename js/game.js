@@ -13,7 +13,8 @@ function Game (objA, objB) {
   this.error = document.querySelector(".error");
   this.player1FinishTurn = document.querySelector(".turn-player1");
   this.player2FinishTurn = document.querySelector(".turn-player2");
-  this.turns =[];
+  this.endGameUp = document.querySelector(".endGameUp");
+  this.endGameDown = document.querySelector(".endGameDown");
 }
 
 Game.prototype.start = function () {
@@ -29,26 +30,25 @@ Game.prototype.start = function () {
     this.checkIfError(this.player1);
     if(this.player1.isErrorCreature === false && this.player1.isNotEnoughMana === false) {
       this.finishTurn(this.player1,this.player2);
+      this.checkEndGame();
       this.changeButtonColours();
       window.location ="index3.html#player2Table";
     }
-    // poner que se cambien los botones de color
   }.bind(this);
 
   this.player2FinishTurn.onclick = function() {
       this.checkIfError(this.player2);
       if(this.player2.isErrorCreature === false && this.player2.isNotEnoughMana === false) {
         this.finishTurn(this.player2,this.player1);
+        this.checkEndGame();
         this.changeButtonColours();
         window.location ="index3.html#player1Table";
       }
-    
-    // poner que se cambien los botones de color
   }.bind(this);
 }
 
 Game.prototype.finishTurn = function (playerA,playerB) {
-  playerA.makeAttack(playerB)
+  playerA.makeAttack(playerA,playerB)
   playerA.minusMana();
   playerB.plusMana();
   playerB.creatureAlive();
@@ -124,15 +124,31 @@ Game.prototype.changeButtonColours = function() {
   if (this.player1FinishTurn.classList.contains("btn-red") === true) {
     this.player1FinishTurn.classList.replace("btn-red","btn-green")
   } else {
-    debugger;
     this.player1FinishTurn.classList.replace("btn-green","btn-red");
   }
 
   if (this.player2FinishTurn.classList.contains("btn-red") === true) {
-    debugger;
     this.player2FinishTurn.classList.replace("btn-red","btn-green")
   } else {
     this.player2FinishTurn.classList.replace("btn-green","btn-red");
+  }
+}
+
+Game.prototype.checkEndGame = function() {
+  if (this.player1.health === 0) {
+    this.endGameUp.classList.add("loser");
+    this.endGameUp.innerHTML = '<img src="images/icons/gameover.png"></img>';
+    this.endGameDown.classList.add("winner");
+    this.endGameDown.innerHTML = '<img src="images/icons/awesome.png">';
+    clearInterval(this.intervalId);
+  }
+
+  if (this.player2.health === 0) {
+    this.endGameDown.classList.add("loser");
+    this.endGameDown.innerHTML = '<img src="images/icons/gameover.png"></img>';
+    this.endGameUp.classList.add("winner");
+    this.endGameUp.innerHTML = '<img src="images/icons/awesome.png">';
+    clearInterval(this.intervalId);
   }
 }
 
