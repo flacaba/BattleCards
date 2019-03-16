@@ -93,6 +93,11 @@ var habilities = [{
   img:"images/cards/06-rna-64-bladebrand.jpg",
   explanation:"Inflinge 50 de daño al aponente directamente.",
   specialHability: function(playerA,playerB) {
+    if(playerB.health > 50) {
+      playerB.health = playerB.health-50;
+    } else {
+      playerB.health = 0;
+    }
   }
 },
 {
@@ -170,7 +175,7 @@ var habilities = [{
   img:"images/cards/11-rna-74-font-of-agonies.jpg",
   explanation:"Si el adversario está por debajo del 15% de vida, lo elimina, de otra manera le inflinge un daño el 30% de la vida restante.",
   specialHability: function(playerA,playerB) {
-    if(playerB.health <= playerB.health0*0.15) {
+    if(playerB.health < (playerB.health0*0.15)) {
       playerB.health = 0;
     } else {
       playerB.health = playerB.health*0.7;

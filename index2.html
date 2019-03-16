@@ -1,53 +1,237 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="styles/css/style2.css">
-</head>
-<body> 
-  <!-- Este div será para la parte de seleccion de campeones de los dos jugadores -->
-  <div class= "container tables">
-    <div class= "card-section">
-      <h1>BattleCards</h1>
-      <div class= "card-display"> 
-        <div id="player1" class="drop-destination" ondrop="dropHandler(event)" ondragover="dragHandler(event)"></div>
-        <div id="player2" class="drop-destination" ondrop="dropHandler(event)" ondragover="dragHandler(event)"></div>
-      </div>
-    </div>
-    <div class="btn-position">
-      <button class="btn arena">GO TO ARENA</button>
-    </div>
-  </div>
-
-  <div class= "container black-background"> 
-    <div class = "card-section white">
-      <h3>MAIN CHARACTERS</h3>
-      <div id= "characters-display" class="card-display" ondrop="dropHandler(event)" ondragover="dragHandler(event)"></div>
-    </div>
-    <div class = "card-section yellow">
-      <h3>LEGENDARY CARDS</h3>
-      <div id= "legendary-display" class= "card-display"></div>
-    </div>
-    <div class = "card-section red">
-      <h3>EPIC CARDS</h3>
-      <div id= "epic-display" class= "card-display"></div>
-    </div>
-    <div class = "card-section grey">
-      <h3>NORMAL CARDS</h3>
-      <div id= "normal-display" class= "card-display"></div>
-    </div>
-  </div>
+  <link rel="stylesheet" type="text/css" media="screen" href="styles/css/style3.css">
  
+</head>
+<body>
+  <div class ="container">
+    <div class="endGameUp"></div>
+    <div class="endGameDown"></div>
+    <div class="btn-position">
+        <button class="btn start-game black-background">START GAME</button>
+    </div>
+    <div id="player1Table" class="normal-display">
+      <!-- Este div será para colocar el personaje -->
+      <div class="player-character-table red-background"></div>
+      <div class="player-character-properties">        
+        <div class="health normal-display">
+          <img src="images/icons/life.png" class="img-prop">
+          <div class="text-specs"></div>
+          <div class="total black-background">
+            <div class="actual green-background"></div>
+          </div>
+        </div>
+        <div class="mana normal-display">
+          <img src="images/icons/mana.png" class="img-prop">
+          <div class="text-specs"></div>
+          <div class="total black-background">
+              <div class="actual blue-bakcground "></div>
+          </div>
+        </div>
+        <div class="attack normal-display">
+          <img src="images/icons/attack.png" class="img-prop">
+          <div class="text-specs"></div>
+          <div class="total"></div>
+        </div>
+        <div class="defense normal-display">
+          <img src="images/icons/defense.png" class="img-prop">
+          <div class="text-specs"></div>
+          <div class="total"></div>
+        </div>
+      </div>
 
-  <script src="js/characters.js"></script>
+
+      <!-- Este div será para colocar las habilidades -->
+      <div class= "habilities-deck normal-display">
+        <div class="card-frame darkgrey-background"></div>
+        <div class="card-frame darkgrey-background"></div>
+        <div class="card-frame darkgrey-background"></div>
+        <div class="card-frame darkgrey-background"></div>
+      </div>
+      <button class="btn turn-player1 btn-green">FINISH TURN</button>
+ 
+    </div>
+    <!-- Aquí estará el deck del juego -->
+    <div class="deck">
+      <div id="player1Deck" class="normal-display">
+        <div class="creature-table normal-display">
+          <div class="card-frame beige-background creature"></div>
+          <div class="creature-properties">        
+              <div class="health normal-display">
+                <img src="images/icons/life.png" class="img-prop">
+                <div class="text-specs"></div>
+                <div class="total black-background">
+                  <div class="actual green-background"></div>
+                </div>
+              </div>
+              <div class="mana normal-display">
+                <img src="images/icons/mana.png" class="img-prop">
+                <div class="text-specs"></div>
+              </div>
+              <div class="attack normal-display">
+                <img src="images/icons/attack.png" class="img-prop">
+                <div class="text-specs"></div>
+              </div>
+              <div class="defense normal-display">
+                <img src="images/icons/defense.png" class="img-prop">
+                <div class="text-specs"></div>
+              </div>
+            </div>
+        </div>
+        <!-- Aquí estarán las habilidades de los personajes -->
+        <div class="habilities normal-display">
+          <div class="card-frame khaki-background hability1"></div>
+          <div class="hability1-properties">
+            <div class="mana normal-display">
+              <img src="images/icons/mana.png" class="img-prop">
+              <div class="text-specs"></div>
+            </div>
+            <div class="attack normal-display">
+              <img src="images/icons/attack.png" class="img-prop">
+              <div class="text-specs"></div>
+            </div>
+            <div class="defense normal-display">
+              <img src="images/icons/defense.png" class="img-prop">
+              <div class="text-specs"></div>
+            </div>
+          </div>
+          <div class="card-frame khaki-background hability2"></div>
+          <div class="hability2-properties">
+            <div class="mana normal-display">
+              <img src="images/icons/mana.png" class="img-prop">
+              <div class="text-specs"></div>
+            </div>
+            <div class="attack normal-display">
+              <img src="images/icons/attack.png" class="img-prop">
+              <div class="text-specs"></div>
+            </div>
+            <div class="defense normal-display">
+              <img src="images/icons/defense.png" class="img-prop">
+              <div class="text-specs"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="error no-display">
+        <img src="images/icons/warn.png" class="warn">
+        <p></p>
+      </div>
+
+      <div id="player2Deck" class="normal-display">
+          <div class="creature-table normal-display">
+            <div class="card-frame beige-background creature" ></div>
+            <div class="creature-properties">        
+                <div class="health normal-display">
+                  <img src="images/icons/life.png" class="img-prop">
+                  <div class="text-specs"></div>
+                  <div class="total black-background">
+                    <div class="actual green-background"></div>
+                  </div>
+                </div>
+                <div class="mana normal-display">
+                  <img src="images/icons/mana.png" class="img-prop">
+                  <div class="text-specs"></div>
+                </div>
+                <div class="attack normal-display">
+                  <img src="images/icons/attack.png" class="img-prop">
+                  <div class="text-specs"></div>
+                </div>
+                <div class="defense normal-display">
+                  <img src="images/icons/defense.png" class="img-prop">
+                  <div class="text-specs"></div>
+                </div>
+              </div>
+          </div>
+          <!-- Aquí estarán las habilidades de los personajes -->
+          <div class="habilities normal-display">
+            <div class="card-frame khaki-background hability1"></div>
+            <div class="hability1-properties">
+              <div class="mana normal-display">
+                <img src="images/icons/mana.png" class="img-prop">
+                <div class="text-specs"></div>
+              </div>
+              <div class="attack normal-display">
+                <img src="images/icons/attack.png" class="img-prop">
+                <div class="text-specs"></div>
+              </div>
+              <div class="defense normal-display">
+                <img src="images/icons/defense.png" class="img-prop">
+                <div class="text-specs"></div>
+              </div>
+            </div>
+            <div class="card-frame khaki-background hability2"></div>
+            <div class="hability2-properties">
+              <div class="mana normal-display">
+                <img src="images/icons/mana.png" class="img-prop">
+                <div class="text-specs"></div>
+              </div>
+              <div class="attack normal-display">
+                <img src="images/icons/attack.png" class="img-prop">
+                <div class="text-specs"></div>
+              </div>
+              <div class="defense normal-display">
+                <img src="images/icons/defense.png" class="img-prop">
+                <div class="text-specs"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+      <div id="player2Table" class="normal-display">
+          <!-- Este div será para colocar el personaje -->
+        <div class="player-character-table red-background"></div>
+        <div class="player-character-properties">        
+          <div class="health normal-display">
+            <img src="images/icons/life.png" class="img-prop">
+            <div class="text-specs"></div>
+            <div class="total black-background">
+              <div class="actual green-background"></div>
+            </div>
+          </div>
+          <div class="mana normal-display">
+            <img src="images/icons/mana.png" class="img-prop">
+            <div class="text-specs"></div>
+            <div class="total black-background">
+                <div class="actual blue-bakcground "></div>
+            </div>
+          </div>
+          <div class="attack normal-display">
+            <img src="images/icons/attack.png" class="img-prop">
+            <div class="text-specs"></div>
+            <div class="total"></div>
+          </div>
+          <div class="defense normal-display">
+            <img src="images/icons/defense.png" class="img-prop">
+            <div class="text-specs"></div>
+            <div class="total"></div>
+          </div>
+        </div>
+          <!-- Este div será para colocar las habilidades -->
+        <div class= "habilities-deck normal-display">
+          <div class="card-frame darkgrey-background"></div>
+          <div class="card-frame darkgrey-background"></div>
+          <div class="card-frame darkgrey-background"></div>
+          <div class="card-frame darkgrey-background"></div>
+        </div>
+        <button class="btn turn-player2 btn-red">FINISH TURN</button>
+      </div>
+  </div>
+  <script src="js/empty.js"></script>
   <script src="js/cards.js"></script>
+  <script src="js/characters.js"></script>
+  <script src="js/creature.js"></script>
+  <script src="js/playerHabilities.js"></script>
   <script src="js/player.js"></script>
   <script src="js/handleCards.js"></script>
-  <script src="js/index2.js"></script>
-  <!-- <script src="js/game.js"></script> -->
+  <script src="js/game.js"></script>
+  <script src="js/index3.js"></script>
+
 </body>
 </html>
-
