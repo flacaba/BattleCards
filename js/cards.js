@@ -242,7 +242,7 @@ var habilities = [{
   explanation:"Las criaturas de adversario le atacan a el mismo - multiplicadas por 2 su ataque.",
   specialHability: function(playerA,playerB) {
     if(playerB.creature.health !== 0) {
-      if(playerB.health > (playerB.creature.attack*2) {
+      if(playerB.health > (playerB.creature.attack*2)) {
         playerB.health = playerB.health - playerB.creature.attack*2
       } else {
         playerB.health = 0;
