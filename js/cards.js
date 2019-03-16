@@ -8,13 +8,15 @@ var habilities = [{
   health: 0,
   mana: 4,
   img:"images/cards/01-rna-91-act-of-treason.jpg",
-  explanation:"Ganas el control de la criatura del contrario, y le ataca",
+  explanation:"Ganas el control de la criatura del contrario, y le ataca directamente.",
   specialHability: function(playerA,playerB)  {
-    if(playerB.health > (playerB.health + playerB.defense - playerB.creature.attack)) {
-      playerB.health = playerB.health + playerB.defense - playerB.creature.attack; 
-    } else {
-      playerB.health = 0;
-    } 
+    if(playerB.creature.health !== 0) {
+      if(playerB.health > playerB.creature.attack) {
+        playerB.health = playerB.health - playerB.creature.attack
+      } else {
+        playerB.health = 0;
+      } 
+    }
   }
 },
 {
