@@ -20,6 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   btnBeginGame.onclick = function() {
    players = getPlayer("player1") +"," + getPlayer("player2");
-   window.location.href = `index3.html?myvar=${players}`;
+   window.location.href = `index2.html?myvar=${players}`;
   }
 });
